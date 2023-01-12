@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  ssl:
+    key-store: classpath:keystore.jks
+    key-store-password: password
+    key-store-type: JKS
+    key-alias: linkedin
+    key-password: password
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: sandbox
+
+server:
+  port: 8000
+
+---
+spring:
+  config:
+    activate:
+      on-profile: test
+
+server:
+  port: 9000
