@@ -1,16 +1,16 @@
-# Spring Framework study place
+# Spring Framework Study Place
 
 This repo has projects for studing the Spring Framework and modules around it.
 
 Based: https://www.linkedin.com/learning/spring-boot-1-0-essential-training
 
-## Maven commands
+## Maven Commands
 
 Clean and package the project:
 
 `./mvnw clean package`
 
-## Java commands
+## Java Commands
 
 Run Java Jar file:
 
