@@ -20,4 +20,8 @@ public class RoomDatabaseService {
     public List<RoomEntity> getAllRooms() {
         return repository.findAll();
     }
+
+    public RoomEntity getById(long id) {
+        return repository.findById(id).orElse(new RoomEntity());
+    }
 }

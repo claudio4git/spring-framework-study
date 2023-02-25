@@ -13,7 +13,6 @@
     <groupId>br.com.jccf</groupId>
     <artifactId>room-clr-app2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>room-clr-app2</name>
 
     <properties>
         <java.version>17</java.version>

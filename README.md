@@ -1,6 +1,6 @@
 # Spring Framework Study Place
 
-This repo has projects for studing the Spring Framework and modules around it.
+This repo has projects for studying the Spring Framework and modules around it.
 
 ## Maven Command
 
@@ -81,7 +81,7 @@ Example of autoconfigure classes:
 
 - Spring Boot provide TomCat by default
 - Create or change: Servlets, Filters, and Listeners https://www.baeldung.com/spring-servletcomponentscan
-- Create aditional `ServletContext` using `ServletContextInitializer` interface
+- Create additional `ServletContext` using `ServletContextInitializer` interface
 - Customize using properties `org.springframework.boot.autoconfigure.web.ServerProperties`
 - Customize compression `server.compression.enable=true`
 - Support to SSL
@@ -193,6 +193,10 @@ Dependency:
       <artifactId>spring-boot-starter-data-jpa</artifactId>
   </dependency>
   <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-rest</artifactId>
+  </dependency>
+  <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
       <scope>runtime</scope>
@@ -227,6 +231,14 @@ H2 console
 
 ### Security
 
+- Authentication and Authorization
+- `WebConfigurerAdapter`
+- @EnableWebSecurity
+- @EnableOAuth2Client
+- @EnableAuthorizationServer
+- @EnableResourceServer
+- Password hashed and not encrypted (SHA-1 in sandbox, BCrypt in production)
+
 Dependency:
 
 ```xml
@@ -238,8 +250,8 @@ Dependency:
 
 ### Asynchronous Messaging
 
-- Producer `RoomClrAppApplication`
-- Consumer `RoomCleanerConsumerApplication`
+- Producer
+- Consumer
 
 Dependency:
 
@@ -254,6 +266,21 @@ Dependency:
       <artifactId>jackson-databind</artifactId>
   </dependency>
 </dependencies>
+```
+
+Or up-to-date way:
+
+```xml
+<depencencies>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-amqp</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-json</artifactId>
+  </dependency>
+</depencencies>
 ```
 
 ### Logging
@@ -277,7 +304,7 @@ Endpoints:
 
 - http://localhost:8080/actuator
 - http://localhost:8080/actuator/health
-- http://localhost:8080/actuator/env
+- http://localhost:8080/actuator/env (authenticated)
 
 Interface to create custom endpoints: `Endpoint`
 
@@ -305,3 +332,12 @@ CMD java -jar /app/application.jar
 ```
 - Docker build command `docker build -t booting-web .`
 - Docker run command `docker run -p 9090:9090 -d booting-web`
+
+
+### Boot Starters Customized
+
+- Common code
+- Common configuration
+- Improve ease of use
+
+Based: https://www.baeldung.com/spring-boot-starters
